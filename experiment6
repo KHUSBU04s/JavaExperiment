@@ -1,1 +1,46 @@
 //
+import java.io.Serializable;
+
+/**
+ * Represents a student with an ID, name, and grade.
+ * This class implements the Serializable interface, which is a marker interface
+ * that tells the Java runtime that instances of this class can be converted
+ * into a byte stream.
+ */
+public class Student implements Serializable {
+
+    /**
+     * A version control ID for the serialized class. If you make changes
+     * to this class (like adding a new field), you should update this ID.
+     * This helps prevent errors when trying to deserialize an older version
+     * of the object with a newer version of the class.
+     */
+    private static final long serialVersionUID = 1L;
+
+    private String studentID;
+    private String name;
+    private char grade;
+
+    // Constructor to create a new Student instance
+    public Student(String studentID, String name, char grade) {
+        this.studentID = studentID;
+        this.name = name;
+        this.grade = grade;
+    }
+
+    /**
+     * Provides a user-friendly string representation of the Student object,
+     * which is useful for printing its contents to the console.
+     *
+     * @return A formatted string with the student's details.
+     */
+    @Override
+    public String toString() {
+        return "Student {\n" +
+               "  studentID = '" + studentID + "',\n" +
+               "  name = '" + name + "',\n" +
+               "  grade = '" + grade + "'\n" +
+               "}";
+    }
+}
+
